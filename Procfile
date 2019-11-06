@@ -1,1 +1,1 @@
-bot: python3.7 telega.py
+bot: python telega.py
