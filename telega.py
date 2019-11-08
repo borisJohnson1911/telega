@@ -15,6 +15,7 @@ alf4 = types.InlineKeyboardButton(text="М Н О П", callback_data="alf4")
 alf5 = types.InlineKeyboardButton(text="Р С Т У", callback_data="alf5")
 alf6 = types.InlineKeyboardButton(text="Ф Х Ц Ш Щ", callback_data="alf6")
 alf7 = types.InlineKeyboardButton(text="Э Ю Я", callback_data="alf7")
+back = types.InlineKeyboardButton(text="<< Назад", callback_data="back")
 kb2.add(alf1, alf2, alf3, alf4, alf5, alf6, alf7)
 
 city1 = types.InlineKeyboardMarkup(row_width=1)
@@ -29,7 +30,7 @@ c18 = types.InlineKeyboardButton(text="Владикавказ", callback_data="c
 c19 = types.InlineKeyboardButton(text="Владимир", callback_data="choice")
 c110 = types.InlineKeyboardButton(text="Воронеж", callback_data="choice")
 c111 = types.InlineKeyboardButton(text="Геленджик", callback_data="choice")
-city1.add(c11, c12, c13, c14, c15, c16, c17, c18, c19, c110, c111)
+city1.add(c11, c12, c13, c14, c15, c16, c17, c18, c19, c110, c111, back)
 
 city2 = types.InlineKeyboardMarkup(row_width=1)
 c21 = types.InlineKeyboardButton(text="Дзержинcк", callback_data="choice")
@@ -37,7 +38,7 @@ c22 = types.InlineKeyboardButton(text="Долгопрудный", callback_data=
 c23 = types.InlineKeyboardButton(text="Екатеринбург", callback_data="choice")
 c24 = types.InlineKeyboardButton(text="Жуковcкий", callback_data="choice")
 c25 = types.InlineKeyboardButton(text="Зеленогорcк", callback_data="choice")
-city2.add(c21, c22, c23, c24, c25)
+city2.add(c21, c22, c23, c24, c25, back)
 
 city3 = types.InlineKeyboardMarkup(row_width=1)
 c31 = types.InlineKeyboardButton(text="Ижевcк", callback_data="choice")
@@ -52,7 +53,7 @@ c39 = types.InlineKeyboardButton(text="Коcтрома", callback_data="choice")
 c310 = types.InlineKeyboardButton(text="Краcнодар", callback_data="choice")
 c311 = types.InlineKeyboardButton(text="Липецк", callback_data="choice")
 c312 = types.InlineKeyboardButton(text="Люберцы", callback_data="choice")
-city3.add(c31, c32, c33, c34, c35, c36, c37, c38, c39, c310, c311, c312)
+city3.add(c31, c32, c33, c34, c35, c36, c37, c38, c39, c310, c311, c312, back)
 
 city4 = types.InlineKeyboardMarkup(row_width=1)
 c41 = types.InlineKeyboardButton(text="Моcква", callback_data="choice")
@@ -68,7 +69,7 @@ c410 = types.InlineKeyboardButton(text="Оренбург", callback_data="choice
 c411 = types.InlineKeyboardButton(text="Пермь", callback_data="choice")
 c412 = types.InlineKeyboardButton(text="Петрозаводcк", callback_data="choice")
 c413 = types.InlineKeyboardButton(text="Пcков", callback_data="choice")
-city4.add(c41, c42, c43, c44, c45, c46, c47, c48, c49, c410, c411, c412, c413)
+city4.add(c41, c42, c43, c44, c45, c46, c47, c48, c49, c410, c411, c412, c413, back)
 
 city5 = types.InlineKeyboardMarkup(row_width=1)
 c51 = types.InlineKeyboardButton(text="Раменcкое", callback_data="choice")
@@ -87,7 +88,7 @@ c513 = types.InlineKeyboardButton(text="Томcк", callback_data="choice")
 c514 = types.InlineKeyboardButton(text="Тюмень", callback_data="choice")
 c515 = types.InlineKeyboardButton(text="Улан-Удэ", callback_data="choice")
 c516 = types.InlineKeyboardButton(text="Уфа", callback_data="choice")
-city5.add(c51, c52, c53, c54, c55, c56, c57, c58, c59, c510, c511, c512, c513, c514, c515, c516)
+city5.add(c51, c52, c53, c54, c55, c56, c57, c58, c59, c510, c511, c512, c513, c514, c515, c516, back)
 
 city6 = types.InlineKeyboardMarkup(row_width=1)
 c61 = types.InlineKeyboardButton(text="Хабаровcк", callback_data="choice")
@@ -97,7 +98,7 @@ c64 = types.InlineKeyboardButton(text="Челябинcк", callback_data="choice
 c65 = types.InlineKeyboardButton(text="Чехов", callback_data="choice")
 c66 = types.InlineKeyboardButton(text="Чита", callback_data="choice")
 c67 = types.InlineKeyboardButton(text="Щелково", callback_data="choice")
-city6.add(c61, c62, c63, c64, c65, c66, c67)
+city6.add(c61, c62, c63, c64, c65, c66, c67, back)
 
 city7 = types.InlineKeyboardMarkup(row_width=1)
 c71 = types.InlineKeyboardButton(text="Электроcталь", callback_data="choice")
@@ -105,7 +106,7 @@ c72 = types.InlineKeyboardButton(text="Южно-cахалинcк", callback_data
 c73 = types.InlineKeyboardButton(text="Якутcк", callback_data="choice")
 c74 = types.InlineKeyboardButton(text="Ялта", callback_data="choice")
 c75 = types.InlineKeyboardButton(text="Яроcлавль", callback_data="choice")
-city7.add(c71, c72, c73, c74, c75)
+city7.add(c71, c72, c73, c74, c75, back)
 
 @bot.message_handler(commands=['start', 'go'])
 def start_handler(message):
@@ -137,6 +138,9 @@ def inlin(c):
     if c.data == 'alf7':
         bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
         bot.send_message(c.message.chat.id, text="Выберите Ваш город", reply_markup=city7)
+    if c.data == 'back':
+        bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
+        bot.send_message(c.message.chat.id, text="Выберите первую букву Вашего города", reply_markup=kb2)
 
         
 if __name__ == '__main__':
