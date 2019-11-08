@@ -1,4 +1,4 @@
-import requests, telebot
+import requests, telebot, random
 from telebot import types
 TOKEN = "1020454335:AAF1Xoi70lyUdj8gunEvh6G1GOanOzLRv3E"
 bot = telebot.TeleBot(TOKEN)
@@ -108,6 +108,10 @@ c74 = types.InlineKeyboardButton(text="Ялта", callback_data="choice")
 c75 = types.InlineKeyboardButton(text="Яроcлавль", callback_data="choice")
 city7.add(c71, c72, c73, c74, c75, back)
 
+check = types.InlineKeyboardMarkup(row_width=1)
+check1 = types.InlineKeyboardButton(text="Проверить оплату", callback_data="fuckoff")
+check.add(check1)
+
 @bot.message_handler(commands=['start', 'go'])
 def start_handler(message):
     bot.send_message(message.chat.id, text='Здравcтвуйте! Ваc приветcтвует бот автопродаж PureMagic! Для начала давайте определимcя c городом', reply_markup=kb1)
@@ -141,6 +145,12 @@ def inlin(c):
     if c.data == 'back':
         bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
         bot.send_message(c.message.chat.id, text="Выберите первую букву Вашего города", reply_markup=kb2)
+    if c.data == 'choice':
+        bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
+        bot.send_message(c.message.chat.id, text="Выберите товар", reply_markup=kb3)
+    if c.data == 'mj1':
+        bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
+        bot.send_message(c.message.chat.id, text="Вы выбрали: Марихуана 1г \n Цена: 1200₽ \n Оплата принимается на Яндекс Деньги: 43575638 \n или на Qiwi: 865394865937456 \n Код в комментарии: " & random.randint(100000,999999) & "После оплаты нажмите на кнопку 'Проверить оплату'. Транзакции проверяются вручную. После того, как оператор удостоверится в успешности оплаты, Вам придет фото, координаты и описание места", reply_markup=check)
 
         
 if __name__ == '__main__':
