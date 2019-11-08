@@ -28,7 +28,7 @@ c18 = types.InlineKeyboardButton(text="Владикавказ", callback_data="c
 c19 = types.InlineKeyboardButton(text="Владимир", callback_data="choice")
 c110 = types.InlineKeyboardButton(text="Воронеж", callback_data="choice")
 c111 = types.InlineKeyboardButton(text="Геленджик", callback_data="choice")
-city1.add(c11, c12, c13б с14, c15, c16, c17, c18, c19, c110, c111)
+city1.add(c11, c12, c13, с14, c15, c16, c17, c18, c19, c110, c111)
 
 @bot.message_handler(commands=['start', 'go'])
 def start_handler(message):
