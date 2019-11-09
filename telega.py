@@ -186,7 +186,9 @@ def inlin(c):
         number = str(random.randint(100000,999999))
         bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
         bot.send_message(c.message.chat.id, text="Вы выбрали: ЛСД 2 по 250мг \nЦена: 2900₽ \nОплата принимается на Яндекс Деньги: 43575638 \nили на Qiwi: 865394865937456 \nКод в комментарии: " + number + "\nПосле оплаты нажмите на кнопку 'Проверить оплату'. Транзакции проверяются вручную. Примерное время подтверждения составляет 15 минут. После того, как оператор удостоверится в успешности оплаты, Вам придет фото, координаты и описание места", reply_markup=check)
-
+    if c.data == 'fuckoff':
+        bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
+        bot.send_message(c.message.chat.id, text="К сожалению, транзакция еще не подтверждена. Попробуйте еще раз позже", reply_markup=check)
         
 if __name__ == '__main__':
      bot.polling(none_stop=True)
