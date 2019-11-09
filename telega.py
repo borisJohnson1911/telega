@@ -159,8 +159,7 @@ def inlin(c):
         bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
         bot.send_message(c.message.chat.id, text="Выберите товар", reply_markup=kb3)
     if c.data == 'mj1':
-        number = random.randint(100000,999999)
-        str(number)
+        number = str(random.randint(100000,999999))
         bot.delete_message(chat_id=c.message.chat.id, message_id=c.message.message_id)
         bot.send_message(c.message.chat.id, text="Вы выбрали: Марихуана 1г \n Цена: 1200₽ \n Оплата принимается на Яндекс Деньги: 43575638 \n или на Qiwi: 865394865937456 \n Код в комментарии: " + number + "\n После оплаты нажмите на кнопку 'Проверить оплату'. Транзакции проверяются вручную. После того, как оператор удостоверится в успешности оплаты, Вам придет фото, координаты и описание места", reply_markup=check)
 
